@@ -7,23 +7,48 @@
     };
 
      var colors = {
+      green:"color:green",
       red:"color:red;",
-      green:"color:green;",
       magenta:"color:magenta;",
       cyan:"color:cyan;"
      };
 
-    var defaultcolors = function(){};
+//Default colors and styles
+    var coloring = function(){};
 
-    defaultcolors.prototype.sgreen = function(consolelog) {
+    coloring.prototype.sgreen = function(consolelog) {
         console.log("%c" + consolelog + "", colors.green + fontsizes.small);
     };
 
-    defaultcolors.prototype.mgreen = function(consolelog) {
+    coloring.prototype.mgreen = function(consolelog) {
         console.log("%c" + consolelog + "", colors.green + fontsizes.medium);
     };
 
-   color.RUNNING = new defaultcolors();
+    coloring.prototype.lgreen = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.green + fontsizes.large);
+    };
+    coloring.prototype.elgreen = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.green + fontsizes.extralarge);
+    };
+
+    coloring.prototype.scyan = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.cyan + fontsizes.small);
+    };
+
+    coloring.prototype.mcyan = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.cyan + fontsizes.medium);
+    };
+
+    coloring.prototype.lcyan = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.cyan + fontsizes.large);
+    };
+
+    coloring.prototype.elcyan = function(consolelog) {
+        console.log("%c" + consolelog + "", colors.cyan + fontsizes.extralarge);
+    };
+
+   color.coloring = new coloring();
+
 
 
 }( window.color = window.color || {}));
