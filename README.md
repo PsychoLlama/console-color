@@ -22,3 +22,13 @@ Now if you want the log to have a background color instead follow the example be
 
 color.coloring.lblue("console log has a background color",color.styles.redbackground);
 
+Now there are four diffrent sizes that your console logs can be starting from small to extra large.
+Follow examples below to test the console log sizes.
+
+Size:SMALL
+color.coloring.scolorlog("coloring the log",color.colors.red);
+
+Size:MEDIUM
+color.coloring.mcolorlog("coloring the log",color.colors.red);
+
+
