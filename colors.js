@@ -31,19 +31,19 @@
 //Default colors and styles
     var coloring = function(){};
 
-    coloring.prototype.sblue = function(consolelog,background,color) {
+    coloring.prototype.scolorlog = function(consolelog,background,color) {
         console.log("%c" + consolelog + "", background + color + fontsizes.small);
     };
 
-    coloring.prototype.mblue = function(consolelog,color) {
+    coloring.prototype.mcolorlog = function(consolelog,color) {
         console.log("%c" + consolelog + "", background + color + fontsizes.medium);
     };
 
-    coloring.prototype.lblue = function(consolelog,color) {
+    coloring.prototype.lcolorlog = function(consolelog,color) {
         console.log("%c" + consolelog + "", color + fontsizes.large);
     };
 
-    coloring.prototype.eblue = function(consolelog,color) {
+    coloring.prototype.ecolorlog = function(consolelog,color) {
         console.log("%c" + consolelog + "", color + fontsizes.extralarge);
     };
 
