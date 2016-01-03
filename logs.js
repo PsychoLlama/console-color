@@ -1,5 +1,4 @@
-//Defualt styles with default colors
 
+color.coloring.sblue("this is blue",color.colors.gold);
 
-color.coloring.sgreen("working");
-color.coloring.scyan("working")
+color.coloring.lblue("this is blue",color.styles.goldbackground);

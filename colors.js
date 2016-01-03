@@ -1,56 +1,52 @@
 (function(color) {
-    var fontsizes = {
+        var fontsizes = {
         small: "font-size:9pt",
         medium: "font-size:10pt",
         large: "font-size:11pt",
         extralarge: "font-size:12pt"
     };
 
-     var colors = {
-      green:"color:green",
-      red:"color:red;",
-      magenta:"color:magenta;",
-      cyan:"color:cyan;"
+         color.colors = {
+         red:"color:red;",
+         green:"color:green;",
+         gold:"color:gold;",
+         blue:"color:blue;",
+         magenta:"color:magenta;",
+         cyan:"color:cyan;",
+         gray:"color:gray;"
+
      };
+
+      color.styles = {
+      redbackground:"background:red;",
+      greenbackground:"background:green;",
+      goldbackground:"background:gold;",
+      bluebackground:"background:blue;",
+      magentabackground:"background:magenta;",
+      cyanbackground:"background:cyan;",
+      graybackground:"background:gray;"
+    };
+
 
 //Default colors and styles
     var coloring = function(){};
 
-    coloring.prototype.sgreen = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.green + fontsizes.small);
+    coloring.prototype.sblue = function(consolelog,background,color) {
+        console.log("%c" + consolelog + "", background + color + fontsizes.small);
     };
 
-    coloring.prototype.mgreen = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.green + fontsizes.medium);
+    coloring.prototype.mblue = function(consolelog,color) {
+        console.log("%c" + consolelog + "", background + color + fontsizes.medium);
     };
 
-    coloring.prototype.lgreen = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.green + fontsizes.large);
-    };
-    coloring.prototype.elgreen = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.green + fontsizes.extralarge);
+    coloring.prototype.lblue = function(consolelog,color) {
+        console.log("%c" + consolelog + "", color + fontsizes.large);
     };
 
-    coloring.prototype.scyan = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.cyan + fontsizes.small);
-    };
-
-    coloring.prototype.mcyan = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.cyan + fontsizes.medium);
-    };
-
-    coloring.prototype.lcyan = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.cyan + fontsizes.large);
-    };
-
-    coloring.prototype.elcyan = function(consolelog) {
-        console.log("%c" + consolelog + "", colors.cyan + fontsizes.extralarge);
+    coloring.prototype.eblue = function(consolelog,color) {
+        console.log("%c" + consolelog + "", color + fontsizes.extralarge);
     };
 
    color.coloring = new coloring();
 
-
-
 }( window.color = window.color || {}));
-
-
