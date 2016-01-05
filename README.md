@@ -31,4 +31,10 @@ color.coloring.scolorlog("coloring the log",color.colors.red);
 Size:MEDIUM
 color.coloring.mcolorlog("coloring the log",color.colors.red);
 
+Size:LARGE
+color.coloring.lcolorlog("coloring the log",color.colors.red);
+
+Size:EXTRALARGE
+color.coloring.ecolorlog("coloring the log",color.colors.red);
+
 
