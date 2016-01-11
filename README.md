@@ -1,40 +1,98 @@
-# Console-Color
-Console Color is a library that allows you to take style your front end console logs in the browser. Works with chrome and FireFox.
-to get started folow the instructions below:
+Console-Color
+---------------
+Make your `console.log`s look **fabulous**
 
-To get started coloring your console logs the first thing you need to do is first call the colors.js in your html file.
-then you need to declare the file static file path directory if you are runing a node server.
+## what is it
+Console log statements are boring, with styles that put people to sleep. That all changed with Firefox and Chrome's new [colored output](http://stackoverflow.com/questions/7505623/colors-in-javascript-console#answer-13017382)... except it didn't. People are still using the same ugly console.logs as before. This library aims to show people how it's done, all while making it dead simple to log beautiful messages.
 
-Once you have the script included start by calling the function below:
+![Console demo](demo.png)
 
-color.coloring.scolorlog();
+## using it
+Simply include it as a script tag in your project:
+```html
+<script src="colors.js"></script>
+```
+> &ast;side effects may include awesomeness
 
-This function takes three paramters the first paramter is the console log
+The script will export the `log` global.
 
-color.coloring.scolorlog("conoslelog here");
+### log.print(...msgs)
+The most basic log is `log.print()`. It takes arguments and prints them to the console, applying very basic styling.
 
-The next paramter is optinal depending on if you want to have a background color or not.
-If you dont want a background color and you just want to have a normal colord console log follow the example below.
+> **note:** every time `.print` is called, the style is reset to it's initial state.
 
-color.coloring.scolorlog("coloring the log",color.colors.red);
+### log.color(color)
+Set the text color. This is a css setting, and can take anything css can.
 
-Now if you want the log to have a background color instead follow the example below.
+```javascript
+log.color('red').print('Rogue llama!')
+```
 
-color.coloring.lblue("console log has a background color",color.styles.redbackground);
+### log.bkg(color)
+Set the background color of the message.
 
-Now there are four diffrent sizes that your console logs can be starting from small to extra large.
-Follow examples below to test the console log sizes.
+```javascript
+log.bkg('#303438').print('hello')
+```
 
-Size:SMALL
-color.coloring.scolorlog("coloring the log",color.colors.red);
+### log.size(px)
+Change the font size of the log message. It defaults to 'px' when
+numbers are given, but can accept any format, such as '125%', '0.8em', etc.
 
-Size:MEDIUM
-color.coloring.mcolorlog("coloring the log",color.colors.red);
+```javascript
+log.size(150).print('huge message!')
+```
 
-Size:LARGE
-color.coloring.lcolorlog("coloring the log",color.colors.red);
+### log.style(Object)
+Fine-tune the style of your messages by passing an object
+containing css properties into this method.
 
-Size:EXTRALARGE
-color.coloring.ecolorlog("coloring the log",color.colors.red);
+```javascript
+log.style({
+	'font-family': 'monaco',
+	'border-radius': '10px',
+	padding: '15px'
+})
+log.print('Stylish output')
+```
 
+> **note:** not all css properties work in the console :(
 
+### log.big.print()
+A shorthand for bold font. It's the same as writing:
+```javascript
+log.style({ 'font-weight': 'bold' }).print('bolded text')
+```
+
+## Pre-styled output methods
+We love ya. That's why we included stylish presets to
+make beautiful `console.log`s.
+
+- success
+- error
+- warning
+- info
+
+```javascript
+log.success('Yey! Success!')
+log.error('naaaayyy')
+log.warning('mind the velociraptors')
+log.info('waffles 50% off on aisle 13')
+```
+
+## chainable goodness
+Nobody likes repeating themselves with code. That's why each method can be chained after the previous, all nifty-like.
+
+```javascript
+log.color('lightgreen').size(50).style({
+	'font-style': 'italic'
+}).print('wazzzaaap')
+```
+
+## drawbacks
+Not all browsers are awesome. Only Firefox and Chrome support colorful logs.
+
+String coercion in log statements: if you wanna log an object, it'll be forced into a string, ending up like "[object Object]" and that never helped anyone :(
+<br> in those cases, just use `console.log` itself.
+
+> **legal footnote:** Does not ship with bacon.
