@@ -3,13 +3,11 @@ var log;
 
 (function () {
 	'use strict';
-	function initial() {
-		return {
-			padding: '0 10px',
-			'font-size': '15px',
-			'border-radius': '2px',
-			'font-family': 'monospace'
-		};
+	function Styles() {
+		this.padding = '0 10px';
+		this['font-size'] = '15px';
+		this['border-radius'] = '2px';
+		this['font-family'] = 'monospace';
 	}
 
 	function parse(input, obj) {
@@ -43,7 +41,7 @@ var log;
 
 	log = {
 		log: [],
-		css: initial(),
+		css: new Styles(),
 		color: function (color) {
 			this.css.color = color;
 			return this;
@@ -84,7 +82,7 @@ var log;
 				return this;
 			}
 			console.log.call(console, '%c' + log.join(' '), style(this));
-			this.css = initial();
+			this.css = new Styles();
 			return this;
 		}
 
